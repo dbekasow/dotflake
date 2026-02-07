@@ -25,15 +25,10 @@ in
 
   flake.modules.homeManager."${username}" = { osConfig, ... }: {
     imports = with self.modules.homeManager; [
-      # Desktop
-      dms
-      dms-plugins
-      niri
-      ghostty
-
-      # Tools
-      git
-      helix
+      bundle-terminal-base
+      bundle-terminal-extended
+      bundle-development
+      bundle-desktop
     ];
 
     home.username = username;

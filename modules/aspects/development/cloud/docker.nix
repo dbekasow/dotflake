@@ -16,4 +16,12 @@
       };
     };
   };
+
+  flake.modules.homeManager.docker = { pkgs, ... }: {
+    programs.lazydocker.enable = true;
+
+    home.packages = with pkgs; [
+      dive
+    ];
+  };
 }
