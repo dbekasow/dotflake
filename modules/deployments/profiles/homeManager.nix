@@ -70,7 +70,8 @@
 
       # Versioning
       git
-      git-delta
+      delta
+      lazygit
 
       # Virtualization
       docker
