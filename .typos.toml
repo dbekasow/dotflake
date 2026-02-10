@@ -1,0 +1,4 @@
+[default]
+extend-ignore-re = [
+  "(?i)\\b[a-z]{1,3}\\b" # Ignore words with 1-3 letters
+]
