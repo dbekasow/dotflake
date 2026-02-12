@@ -34,9 +34,6 @@
     ];
 
     bundle-terminal-extended.imports = [
-      # Files
-      ast-grep
-
       # System information
       fastfetch
 

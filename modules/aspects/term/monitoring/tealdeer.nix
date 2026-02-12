@@ -2,9 +2,12 @@
   flake.modules.homeManager.tealdeer = _: {
     programs.tealdeer = {
       enable = true;
-      enableAutoUpdates = true;
+      enableAutoUpdates = false;
 
-      settings = { };
+      settings.updates = {
+        auto_update = true;
+        auto_update_interval_hours = 720;
+      };
     };
   };
 }

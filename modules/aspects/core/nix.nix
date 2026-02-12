@@ -22,5 +22,7 @@
       channel.enable = false;
       optimise.automatic = true;
     };
+
+    programs.nix-ld.enable = true;
   };
 }

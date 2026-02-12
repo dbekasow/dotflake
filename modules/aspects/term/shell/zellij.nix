@@ -2,6 +2,7 @@
   flake.modules.homeManager.zellij = {
     programs.zellij = {
       enable = true;
+      enableFishIntegration = true;
 
       settings = {
         # UI Configuration        
@@ -26,24 +27,7 @@
 
         # Environment setup
         env.COLORTERM = "truecolor";
-
       };
     };
-
-    programs.zellij.settings.keybinds.pane =
-      let
-        viLayer = binds: builtins.listToAttrs (map
-          ({ keys, dir }: {
-            name = "bind ${builtins.concatStringsSep " " (map (k: ''"${k}"'') keys)}";
-            value = { MoveFocus = dir; SwitchToMode = "Normal"; };
-          })
-          binds);
-      in
-      viLayer [
-        { keys = [ "h" "Left" ]; dir = "Left"; }
-        { keys = [ "l" "Right" ]; dir = "Right"; }
-        { keys = [ "j" "Down" ]; dir = "Down"; }
-        { keys = [ "k" "Up" ]; dir = "Up"; }
-      ];
   };
 }
