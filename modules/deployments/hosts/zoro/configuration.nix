@@ -8,6 +8,7 @@
       nix
       nix-substituters
       security
+      stylix
       system-packages
       users
       users-meta

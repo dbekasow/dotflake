@@ -9,6 +9,7 @@
       nix-substituters
       security
       ssh
+      stylix
       system-packages
       users
       users-meta

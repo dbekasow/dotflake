@@ -21,6 +21,9 @@
       gpg
       rbw
 
+      # Style
+      stylix
+
       # Shell
       carapace
       direnv

@@ -1,9 +1,9 @@
 {
-  flake.modules.nixos.qt-theme = {
+  flake.modules.nixos.qt-theme = { lib, ... }: {
     qt = {
       enable = true;
-      platformTheme = "gnome";
-      style = "adwaita-dark";
+      platformTheme = lib.mkDefault "gnome";
+      style = lib.mkDefault "adwaita-dark";
     };
   };
 }
