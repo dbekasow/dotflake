@@ -1,5 +1,5 @@
 { self, ... }: {
-  nixosHosts.luffy = {
+  nixosHosts.luffy = { ... }: {
     imports = with self.modules.nixos; [
       # core
       fonts
@@ -8,6 +8,7 @@
       nix
       nix-substituters
       security
+      secrets
       ssh
       stylix
       system-packages

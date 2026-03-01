@@ -23,10 +23,15 @@
           nix-search-tv
           nix-search-cli
           nix-output-monitor
+
           # Misc
           git
           just
           direnv
+
+          # Secrets
+          config.agenix-rekey.package
+          rage
         ];
         shellHook = config.pre-commit.installationScript;
       };

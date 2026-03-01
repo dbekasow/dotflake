@@ -23,6 +23,7 @@
 !*.json
 !*.md
 !*.nix
+!*.pub
 !*.toml
 !*.yml
 !*.yaml
