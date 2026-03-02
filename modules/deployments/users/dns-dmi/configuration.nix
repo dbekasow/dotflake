@@ -7,6 +7,7 @@ in
     metadata."${username}" = {
       fullName = "Denis Bekasow";
       email = "denis.bekasow@dmi.de";
+      passwordFile = ./secrets/password.age;
     };
 
     users.users."${username}" = {
