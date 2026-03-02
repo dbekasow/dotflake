@@ -4,6 +4,7 @@
       # core
       fonts
       home-manager
+      host-path
       locale
       nix
       nix-substituters
@@ -14,6 +15,7 @@
       system-packages
       users
       users-meta
+      users-password
       yubikey
 
       # System

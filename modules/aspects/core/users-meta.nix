@@ -5,6 +5,7 @@ let
   metaOptions = with types; {
     fullName = mkOption { type = str; };
     email = mkOption { type = str; };
+    passwordFile = mkOption { type = path; };
     sshKeys = mkOption { type = listOf str; default = [ ]; };
     yubiKeys = mkOption { type = listOf str; default = [ ]; };
   };

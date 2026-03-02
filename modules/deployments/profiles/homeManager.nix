@@ -16,6 +16,8 @@
       # Nix
       nix-index-database
       nix-tools
+      secrets
+      user-path
 
       # Security
       gpg

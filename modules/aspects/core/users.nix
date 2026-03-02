@@ -1,10 +1,7 @@
 {
-  flake.modules.nixos.users = { pkgs, config, lib, ... }: {
-    users = {
-      allowNoPasswordLogin = true;
-      mutableUsers = false;
-      defaultUserShell = pkgs.fish;
-    };
+  flake.modules.nixos.users = { config, lib, ... }: {
+    users.allowNoPasswordLogin = lib.mkDefault true;
+    users.mutableUsers = false;
 
     users.users = lib.genAttrs
       (lib.attrNames config.metadata)

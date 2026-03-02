@@ -1,8 +1,5 @@
 { self, ... }:
-let
-  username = "dns-dmi";
-in
-{
+let username = "dns-dmi"; in {
   flake.modules.nixos."${username}" = { pkgs, ... }: {
     metadata."${username}" = {
       fullName = "Denis Bekasow";

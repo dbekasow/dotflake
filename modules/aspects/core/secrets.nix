@@ -6,8 +6,10 @@
     ];
 
     age.rekey = rec {
-      localStorageDir = inputs.self + "/modules/deployments/hosts/${config.networking.hostName}/secrets";
-      hostPubkey = localStorageDir + "/host.pub";
+      secretsDir = "${config.deployment.hostDir}/secrets";
+      generatedSecretsDir = secretsDir + "/generated";
+      localStorageDir = secretsDir + "/local";
+      hostPubkey = secretsDir + "/host.pub";
       masterIdentities = [{
         identity = inputs.self + "/master-key.age";
         pubkey = "age1kalxvlmjjydtdps5n27qyf5cf6eqwzuaesemj4enp8ulyw3mcsls3rkpd6";
@@ -16,9 +18,17 @@
     };
   };
 
-  flake.modules.homeManager.secrets = {
+  flake.modules.homeManager.secrets = { config, osConfig, ... }: {
     imports = [
       inputs.agenix.homeManagerModules.default
+      inputs.agenix-rekey.homeManagerModules.default
     ];
+
+    age.rekey = rec {
+      inherit (osConfig.age.rekey) masterIdentities storageMode hostPubkey;
+      secretsDir = "${config.deployment.userDir}/secrets";
+      generatedSecretsDir = secretsDir + "/generated";
+      localStorageDir = secretsDir + "/local";
+    };
   };
 }

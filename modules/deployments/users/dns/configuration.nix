@@ -1,12 +1,10 @@
 { self, ... }:
-let
-  username = "dns";
-in
-{
+let username = "dns"; in {
   flake.modules.nixos."${username}" = {
     metadata."${username}" = {
       fullName = "Denis Bekasow";
       email = "denis.bekasow@proton.me";
+      passwordFile = ./secrets/password.age;
     };
 
     users.users."${username}" = {
